@@ -31,8 +31,8 @@
 											<li><a href="index.html">Home</a></li>
 											<li><a href="generic.html">Generic</a></li>
 											<li><a href="elements.html">Elements</a></li>
-											<li><a href="register.html">Sign Up</a></li>
-											<li><a href="#">Log In</a></li>
+											<li><a href="#">Sign Up</a></li>
+											<li><a href="login.html">Log In</a></li>
 										</ul>
 									</div>
 								</li>
@@ -44,17 +44,24 @@
 
 									<section id="banner">
 						<header>
-							<h2>Login to Coderdojo</h2>							</header>
+							<h2>Sign up to Coderdojo</h2>							</header>
 
 															<img src="images/logo.png" style="height:100px; width:100px; margin-left: auto; margin-right: auto; ">
 							<p>
-															<form method="post" action="http:/127.0.0.1/login.php">
+															<form method="post" action="http:/127.0.0.1/register.php">
 										<div class="row uniform" style="width:80%; margin-left: auto; margin-right: auto;">
+											<div class="6u 12u$(small)">
+												<input type="text" name="fullname" id="demo-email" value="" placeholder="Your full name" />
+																								</div>
+											<div class="6u 12u$(small)">
+												<input type="email" name="email" id="demo-email" value="" placeholder=" Your Email" />
+													</div>
+											
 											<div class="6u 12u$(xsmall)">
-												<input type="email" name="email" id="demo-email" value="" placeholder="Email" />
+												<input type="password" name="password" id="demo-email" value="" placeholder=" Choose a Password" />
 											</div>
 											<div class="6u$ 12u$(xsmall)">
-												<input type="password" name="password" id="demo-name" value="" placeholder="Password" />
+												<input type="password" name="password_verify" id="demo-name" value="" placeholder="Repeat your Password" />
 											</div>
 											<div class="12u$">
 												<ul class="actions">
