@@ -6,22 +6,28 @@ if (isset($_POST["email"]) && ($_POST["password"]))
 	include_once "config.php";
 	
 $sql = "SELECT email, password_hash FROM users";
-$result = $conn->query($sql);
-
-//Login initaites
-if ($result->num_rows > 0) {
-	    while($row = $result->fetch_assoc()) {
-	if($_POST["email"] == $row["email"]){
+$data = $conn->query($sql);
+    while($result = $data->fetch_assoc()) {
+		
+						if($_POST["email"] == $result['email']){
+							
 		echo "Oi you, ya got the email right, lets see 'bout the password now ya junkie";
-		if($_POST["password"] == 'password'){
-			echo "<p>guess what ya junkie, the flippin password is roight, now ya can go smuggle weed 'cross the border</p>"
+						
+		if (password_verify($_POST['password'], $result['password_hash'])) {
+						
+						echo "<p>da flippin hash was right, ya got in a'ight</p>";
+					}
+		else	{
+			    echo $conn->error;
+			echo "<p>jaesus ya flippin eejit, ya got the password wrong</p>";
+
 		}
 	}
 	else{
 		echo "Data is not in server, did you enter the right info?";
 	}
-		} 
-}
+				
+	}
 }
 else {
 	echo "You left the password field blank";
