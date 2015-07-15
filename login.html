@@ -4,22 +4,6 @@
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-
-<?php
-// show potential errors / feedback (from login object)
-if (isset($login)) {
-    if ($login->errors) {
-        foreach ($login->errors as $error) {
-            echo $error;
-        }
-    }
-    if ($login->messages) {
-        foreach ($login->messages as $message) {
-            echo $message;
-        }
-    }
-}
-?>
 <html>
 	<head>
 		<title>Elements - Spectral by HTML5 UP</title>
@@ -44,10 +28,10 @@ if (isset($login)) {
 									<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
 										<ul>
-											<li><a href="../index.php">Home</a></li>
-											<li><a href="../generic.html">Generic</a></li>
-											<li><a href="../elements.html">Elements</a></li>
-											<li><a href="register.php">Sign Up</a></li>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="generic.html">Generic</a></li>
+											<li><a href="elements.html">Elements</a></li>
+											<li><a href="register.html">Sign Up</a></li>
 											<li><a href="#">Log In</a></li>
 										</ul>
 									</div>
@@ -64,17 +48,17 @@ if (isset($login)) {
 
 															<img src="images/logo.png" style="height:100px; width:100px; margin-left: auto; margin-right: auto; ">
 							<p>
-															<form method="post" name="loginform" action="login.php">
+															<form method="post" action="http:/127.0.0.1/login.php">
 										<div class="row uniform" style="width:80%; margin-left: auto; margin-right: auto;">
 											<div class="6u 12u$(xsmall)">
-												<input type="email" name="user_email" id="demo-email" value="" placeholder="Email" />
+												<input type="email" name="email" id="demo-email" value="" placeholder="Email" />
 											</div>
 											<div class="6u$ 12u$(xsmall)">
-												<input type="password" name="user_password" id="demo-name" value="" placeholder="Password" />
+												<input type="password" name="password" id="demo-name" value="" placeholder="Password" />
 											</div>
 											<div class="12u$">
 												<ul class="actions">
-													<li><input type="submit" value="Sign in" name="login" class="special" /></li>
+													<li><input type="submit" value="Sign in" class="special" /></li>
 													<li><input type="reset" value="Sign Up" /></li>
 												</ul>
 											</div>
