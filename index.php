@@ -3,7 +3,58 @@
 	Spectral by HTML5 UP
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+--><?php
+
+require_once("login/classes/Login.php");
+
+$login = new Login();
+
+// ... ask if we are logged in here:
+if ($login->isUserLoggedIn() == true) {
+    // the user is logged in. you can do whatever you want here.
+    // for demonstration purposes, we simply show the "you are logged in" view.
+echo "					<header id=\"header\" class=\"alt\">
+						<h1><a href=\"index.html\">Drogheda Coderdojo</a></h1>
+						<nav id=\"nav\">
+							<ul>
+								<li class=\"special\">
+									<a href=\"#menu\" class=\"menuToggle\"><span>Menu</span></a>
+									<div id=\"menu\">
+										<ul>
+											<li><a href=\"index.html\">Home</a></li>
+											<li><a href=\"generic.html\">Generic</a></li>
+											<li><a href=\"elements.html\">Elements</a></li>
+											<li><a href=\"login/login.php\">".$_SESSION['user_name']."</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>";
+}
+else {
+	
+	echo "					<header id=\"header\" class=\"alt\">
+						<h1><a href=\"index.html\">Drogheda Coderdojo</a></h1>
+						<nav id=\"nav\">
+							<ul>
+								<li class=\"special\">
+									<a href=\"#menu\" class=\"menuToggle\"><span>Menu</span></a>
+									<div id=\"menu\">
+										<ul>
+											<li><a href=\"index.html\">Home</a></li>
+											<li><a href=\"generic.html\">Generic</a></li>
+											<li><a href=\"elements.html\">Elements</a></li>
+											<li><a href=\"login/register.php\">Sign Up</a></li>
+											<li><a href=\"login/login.php\">Log In</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>";
+}
+?>
 <html>
 	<head>
 		<title>Coderdojo drogheda</title>
@@ -20,25 +71,7 @@
 			<div id="page-wrapper">
 
 				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">Drogheda Coderdojo</a></h1>
-						<nav id="nav">
-							<ul>
-								<li class="special">
-									<a href="#menu" class="menuToggle"><span>Menu</span></a>
-									<div id="menu">
-										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="generic.html">Generic</a></li>
-											<li><a href="elements.html">Elements</a></li>
-											<li><a href="register.html">Sign Up</a></li>
-											<li><a href="login.html">Log In</a></li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-						</nav>
-					</header>
+
 
 				<!-- Banner -->
 					<section id="banner">
